@@ -1,7 +1,11 @@
 class Player extends GameObject {
   
+  float xp;
+  
   Player() {
-    super(width/2, height/2, 20, 1, grey);
+    super(width/2, height/2, 20, 1, grey, 30, 1);
+    
+   
   }
   
   //void show and boolean isDead are in the superclass, GameObject
@@ -9,10 +13,10 @@ class Player extends GameObject {
   void act() { //override!
     super.act();
     //respond to keypresses
-    if (wkey) vy = -4;
-    if (akey) vx = -4;
-    if (skey) vy = 4;
-    if (dkey) vx = 4;
+    if (wkey) vy = -3;
+    if (akey) vx = -3;
+    if (skey) vy = 3;
+    if (dkey) vx = 3;
     //stop if player lets go of keys
     if (!wkey && !skey) vy = 0;
     if (!akey && !dkey) vx = 0;
@@ -23,12 +27,16 @@ class Player extends GameObject {
     if (y > height) y = height;
     //shooting
     shoot();
+    //upgrades
+    
   }
   
   void shoot() {
     if (mousePressed){
+      if (frameCount % reload == 0){  
     objects.add(new Bullet());
     
+      }
   }
 }
 }

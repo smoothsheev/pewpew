@@ -2,9 +2,9 @@ class Bullet extends GameObject {
   
   
   Bullet() {
-    super(myPlayer.x, myPlayer.y, 5, 1, grey);
+    super(myPlayer.x, myPlayer.y, 5, 1, grey, 10, 1);
     PVector aim = new PVector(mouseX - myPlayer.x, mouseY - myPlayer.y);
-    aim.setMag(10);
+    aim.setMag(5);
     vx = aim.x;
     vy = aim.y;
   }
@@ -17,10 +17,16 @@ class Bullet extends GameObject {
   int i = 0;
   while (i < objects.size()) {
    GameObject obj = objects.get(i);
-   if (obj instanceof Obstacle) {
-     if (dist(obj.x, obj.y, x, y) < obj.size/2 + size/2)  {
+   if (obj instanceof Obstacle && touching(obj)) {
+
        hp = 0;
-     }
+     
+   }
+   if ( obj instanceof Enemy && touching(obj)) {
+       hp = 0;
+       obj.hp--;
+       myPlayer.xp = myPlayer.xp + 100;
+ 
    }
     i++;
   }
