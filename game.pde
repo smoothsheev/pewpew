@@ -1,6 +1,6 @@
  void game() {
   background(white);
- 
+ println(mouseX, mouseY);
   
   //game engine code
   int i = 0;
@@ -39,12 +39,14 @@
    noStroke();
    noFill();
    
-   int k = 0;
-   while (k < 10) {
+   
+   
+   //int k = 0;
+   //while (k < 10) {
      
      
      
-   } 
+   //} 
 }
 
 

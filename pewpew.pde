@@ -12,6 +12,8 @@ color yellow = #F8CA00;
 color green  = #8A9B0F;
 color grey = #909090;
 color darkgrey = #5F5F5F;
+color red = #FF0D0D;
+color blue = #0028FF;
 
 //mode framework variables
 final int INTRO    = 0;

@@ -28,8 +28,12 @@ class Upgrade {
   }
 }
 
-//class Reload extends Upgrade{
-    
-//  super(
+class Reload extends Upgrade{
+   
+  Reload(){
+  super(760, 680, 35, 20, green);
   
-//}
+  
+  
+  }
+}

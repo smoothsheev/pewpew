@@ -3,7 +3,7 @@ class Player extends GameObject {
   float xp;
   
   Player() {
-    super(width/2, height/2, 20, 1, grey, 30, 1);
+    super(width/2, height/2, 20, 1, blue, 30, 1);
     
    
   }
@@ -27,6 +27,7 @@ class Player extends GameObject {
     if (y > height) y = height;
     //shooting
     shoot();
+    
     //upgrades
     
   }
@@ -34,7 +35,7 @@ class Player extends GameObject {
   void shoot() {
     if (mousePressed){
       if (frameCount % reload == 0){  
-    objects.add(new Bullet());
+    objects.add(new Bullet(x, y, 5, 1, blue));
     
       }
   }
